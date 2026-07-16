@@ -27,4 +27,6 @@ include(":apps:mobile")
 include(":apps:stb")
 include(":apps:tv")
 include("core:design_system")
- 
+include("core:common")
+include("core:mobile")
+include("core:tv")
