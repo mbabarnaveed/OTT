@@ -1,0 +1,11 @@
+{
+  "forceUpdate": true,
+  "version": "1.0.0",
+  "country":"hu",
+  "baseLang": "hu",
+  "tenantId": 10,
+  "translation_url":"https://stg-ppf-cdn-lb.aws.playco.com/stg-peg-data/default/android/translation_1.0/hu/",
+  "languages": [
+    "hu","en"
+  ]
+}
