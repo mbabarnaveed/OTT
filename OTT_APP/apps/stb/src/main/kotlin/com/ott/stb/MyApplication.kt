@@ -1,4 +1,4 @@
-package come.ott.tv
+package com.ott.stb
 
 import com.ott.tv.TvApplication
 import dagger.hilt.android.HiltAndroidApp

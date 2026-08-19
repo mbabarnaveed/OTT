@@ -1,4 +1,4 @@
-package come.ott.tv
+package com.ott.tv
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
