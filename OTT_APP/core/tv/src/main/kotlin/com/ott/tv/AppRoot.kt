@@ -1,4 +1,4 @@
-package com.ott.mobile
+package com.ott.tv
 
 import android.content.Intent
 import androidx.compose.foundation.background
@@ -10,9 +10,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
-import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.ott.common.routes.AppRoute
 import com.ott.common.routes.EntryBuilder

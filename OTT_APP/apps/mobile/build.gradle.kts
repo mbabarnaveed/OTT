@@ -98,9 +98,9 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(project(":core:mobile"))
     implementation(project(":core:common"))
-    implementation(libs.navigation3.ui)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
+    implementation(libs.navigation3.ui)
 }

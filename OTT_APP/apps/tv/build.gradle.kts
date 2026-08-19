@@ -104,4 +104,7 @@ dependencies {
 
     implementation(project(":core:tv"))
     implementation(project(":core:common"))
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.navigation3.ui)
 }
