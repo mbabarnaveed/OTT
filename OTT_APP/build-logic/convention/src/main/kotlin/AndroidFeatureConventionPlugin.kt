@@ -10,8 +10,8 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply {
-                apply("starzppf.android.library")
-                apply("starzppf.android.hilt")
+                apply("ott.android.library")
+                apply("ott.android.hilt")
             }
 
             dependencies {
