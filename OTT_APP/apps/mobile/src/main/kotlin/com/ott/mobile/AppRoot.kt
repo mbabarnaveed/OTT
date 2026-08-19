@@ -1,15 +1,12 @@
 package com.ott.mobile
 
 import android.content.Intent
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import com.ott.common.routes.AppRoute
@@ -37,9 +34,4 @@ fun AppRoot(
             entryBuilders.forEach { it(navigationManager) }
         }
     )
-}
-
-@Composable
-private fun RouteContent() {
-    Box(modifier = Modifier.fillMaxSize().background(color = Color.White))
 }

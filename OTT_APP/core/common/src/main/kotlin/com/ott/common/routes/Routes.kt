@@ -1,7 +1,11 @@
 package com.ott.common.routes
 
+import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
 import kotlinx.serialization.Serializable
+
+typealias EntryBuilder = @JvmSuppressWildcards EntryProviderScope<AppRoute>.(navigationManager: NavigationManager) -> Unit
+
 @Serializable
 sealed interface AppRoute : NavKey
 @Serializable

@@ -6,7 +6,6 @@ import androidx.navigation3.runtime.NavKey
 import javax.inject.Inject
 import javax.inject.Singleton
 
-typealias EntryBuilder = @JvmSuppressWildcards EntryProviderScope<AppRoute>.(navigationManager: NavigationManager) -> Unit
 
 @Singleton
 class NavigationManager @Inject constructor(){
