@@ -1,7 +1,7 @@
-package come.ott.tv
-
+package com.ott.tv
 
 import dagger.hilt.android.HiltAndroidApp
+
 @HiltAndroidApp
 class MyApplication: TvApplication() {
 

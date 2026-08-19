@@ -1,16 +1,10 @@
-package come.ott.stb
+package com.ott.stb
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import com.ott.common.routes.EntryBuilder
 import com.ott.common.routes.NavigationManager
-import com.ott.stb.AppRoot
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -28,7 +22,7 @@ class MainActivity: ComponentActivity()  {
         setContent {
             AppRoot(
                 intent = intent,
-                entryBuilders=entryBuilders,
+                entryBuilders = entryBuilders,
                 navigationManager = navigationManager
             )
         }
