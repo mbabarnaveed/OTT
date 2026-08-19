@@ -29,6 +29,7 @@ core = "1.18.0"
 roomKtx = "2.8.4"
 gson = "2.13.2"
 navigation3 = "1.0.0"
+navigation3Ui = "1.1.6"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -84,6 +85,7 @@ androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = 
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" }
 androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" }
+navigation3-ui = { group = "androidx.navigation3", name = "navigation3-ui", version.ref = "navigation3Ui" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

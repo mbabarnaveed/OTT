@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.ott.android.library)
     alias(libs.plugins.ott.android.compose)
     alias(libs.plugins.ott.android.hilt)
+    alias(libs.plugins.kotlin.serialization)
 }
 android {
     namespace = "ott.core.designsystem"

@@ -1,9 +1,10 @@
 package com.ott.common.routes
 
 import androidx.navigation3.runtime.NavBackStack
+import androidx.navigation3.runtime.NavKey
 
 class NavigationManager(
-    private val backStack: NavBackStack<AppRoute>
+    private val backStack: NavBackStack<NavKey>
 ) {
     fun navigate(route: AppRoute) {
         backStack.add(route)
@@ -15,8 +16,8 @@ class NavigationManager(
         }
         backStack.removeLastOrNull()
         return true
-
     }
+
     fun navigateToHome() {
         backStack.clear()
         backStack.add(HomeRoute)
@@ -25,7 +26,6 @@ class NavigationManager(
     fun navigateAndClear(route: AppRoute) {
         backStack.clear()
         backStack.add(route)
-
     }
 
     fun replace(route: AppRoute) {
@@ -40,11 +40,9 @@ class NavigationManager(
         ) {
             backStack.removeLastOrNull()
         }
-
     }
 
     fun currentRoute(): AppRoute? {
-        return backStack.lastOrNull()
+        return backStack.lastOrNull() as? AppRoute
     }
-
 }
