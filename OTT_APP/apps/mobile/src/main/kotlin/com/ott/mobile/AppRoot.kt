@@ -5,44 +5,38 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
-import com.ott.common.routes.DetailsRoute
+import com.ott.common.routes.AppRoute
+import com.ott.common.routes.EntryBuilder
 import com.ott.common.routes.HomeRoute
 import com.ott.common.routes.NavigationManager
-import com.ott.common.routes.PlayerRoute
-import com.ott.common.routes.SearchRoute
-import com.ott.common.routes.SettingsRoute
 
 @Composable
-fun AppRoot(intent: Intent) {
-    val backStack = rememberNavBackStack(HomeRoute)
-    val navigationManager = remember(backStack) { NavigationManager(backStack) }
+fun AppRoot(
+    intent: Intent,
+    navigationManager:NavigationManager,
+    entryBuilders: Set<EntryBuilder>
+) {
+    val backStack = remember { mutableStateListOf<AppRoute>(HomeRoute) }
+
+    LaunchedEffect(backStack) {
+        navigationManager.attachBackStack(backStack)
+    }
 
     NavDisplay(
         backStack = backStack,
         modifier = Modifier.fillMaxSize(),
         onBack = { navigationManager.navigateBack() },
         entryProvider = entryProvider {
-            entry<HomeRoute> {
-                RouteContent()
-            }
-            entry<DetailsRoute> {
-                RouteContent()
-            }
-            entry<SearchRoute> {
-                RouteContent()
-            }
-            entry<SettingsRoute> {
-                RouteContent()
-            }
-            entry<PlayerRoute> {
-                RouteContent()
-            }
+            entryBuilders.forEach { it(navigationManager) }
         }
     )
 }
