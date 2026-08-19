@@ -99,7 +99,7 @@ dependencies {
     implementation(libs.google.gson)
     implementation(libs.kotlinx.immutable)
     implementation(libs.androidx.hilt.navigation.compose)
-
+    implementation(project(":core:tv"))
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 }

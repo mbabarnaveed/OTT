@@ -9,7 +9,7 @@
         android:required="true" />
 
     <application
-        android:name=".StbApplication"
+        android:name=".TvApplication"
         android:allowBackup="false"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
