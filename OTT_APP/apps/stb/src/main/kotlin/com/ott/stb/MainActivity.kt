@@ -1,4 +1,4 @@
-package com.ott.stb
+package come.ott.stb
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
