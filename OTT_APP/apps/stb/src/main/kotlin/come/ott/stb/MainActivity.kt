@@ -15,16 +15,6 @@ class MainActivity: ComponentActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        /*enableEdgeToEdge(
-            statusBarStyle = SystemBarStyle.light(
-                scrim = menuBg.toArgb(),
-                darkScrim = menuBg.toArgb()
-            )
-        )
-        setContent {
-            AppRoot(intent = intent, viewModel = appViewModel)
-        }*/
         setContent {
             Box(modifier = Modifier.fillMaxSize().background(color = Color.White)) { }
         }
