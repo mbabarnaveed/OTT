@@ -100,6 +100,7 @@ dependencies {
     implementation(libs.kotlinx.immutable)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(project(":core:tv"))
+    implementation(project(":core:common"))
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 }

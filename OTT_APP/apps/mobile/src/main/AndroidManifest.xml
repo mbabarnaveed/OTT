@@ -9,7 +9,7 @@
         android:required="true" />
 
     <application
-        android:name=".MobileApplication"
+        android:name=".MyApplication"
         android:allowBackup="false"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"

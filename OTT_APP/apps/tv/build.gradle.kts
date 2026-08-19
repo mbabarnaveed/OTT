@@ -103,4 +103,5 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     implementation(project(":core:tv"))
+    implementation(project(":core:common"))
 }
