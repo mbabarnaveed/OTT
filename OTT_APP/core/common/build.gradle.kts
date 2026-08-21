@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 android {
-    namespace = "ott.core.designsystem"
+    namespace = "ott.core.common"
 }
 
 dependencies{

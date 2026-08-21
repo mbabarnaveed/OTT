@@ -10,6 +10,8 @@ typealias EntryBuilder = @JvmSuppressWildcards EntryProviderScope<AppRoute>.(nav
 sealed interface AppRoute : NavKey
 @Serializable
 data object HomeRoute : AppRoute
+@Serializable
+data object StartUpRoute : AppRoute
 
 @Serializable
 data class DetailsRoute(

@@ -11,8 +11,8 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import com.ott.common.routes.AppRoute
 import com.ott.common.routes.EntryBuilder
-import com.ott.common.routes.HomeRoute
 import com.ott.common.routes.NavigationManager
+import com.ott.common.routes.StartUpRoute
 
 @Composable
 fun AppRoot(
@@ -20,7 +20,7 @@ fun AppRoot(
     navigationManager:NavigationManager,
     entryBuilders: Set<EntryBuilder>
 ) {
-    val backStack = remember { mutableStateListOf<AppRoute>(HomeRoute) }
+    val backStack = remember { mutableStateListOf<AppRoute>(StartUpRoute) }
 
     LaunchedEffect(backStack) {
         navigationManager.attachBackStack(backStack)
