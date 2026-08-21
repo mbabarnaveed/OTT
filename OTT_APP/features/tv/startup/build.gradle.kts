@@ -7,4 +7,6 @@ android {
     namespace = "ott.features.tv.startup"
 }
 dependencies {
+    implementation(project(":core:common"))
+    implementation(project(":core:tv"))
 }

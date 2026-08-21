@@ -101,6 +101,7 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(project(":core:tv"))
     implementation(project(":core:common"))
+    implementation(project(":features:tv:startup"))
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation(libs.androidx.navigation3.runtime)
