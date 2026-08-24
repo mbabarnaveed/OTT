@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.flowOf
 
 @Composable
 fun StepInMobileScreen(
-    stateFlow: Flow<ScreenState> = flowOf(ScreenState.Content),
+    stateFlow: Flow<ScreenState> = flowOf(ScreenState.Content()),
     loadingContent: @Composable () -> Unit = { ScreenLoadingContent() },
     errorContent: @Composable () -> Unit = { ScreenErrorContent() },
     content: @Composable () -> Unit = { ScreenContent() },

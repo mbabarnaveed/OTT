@@ -4,37 +4,42 @@ import android.content.Context
 import androidx.lifecycle.viewModelScope
 import com.ott.common.ui.screen.ScreenState
 import com.ott.common.viewmodel.GlobalPageViewModel
-import com.ott.session.usecase.GetConfigUseCase
+import com.ott.session.configs.AppConfig
+import com.ott.session.usecase.GetStartupUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 open class StartupBaseViewModel @Inject constructor(
     @param:ApplicationContext private val context: Context,
-    private val getConfigUseCase: GetConfigUseCase,
+    private val getStartupUseCase: GetStartupUseCase,
 ) : GlobalPageViewModel(context = context) {
 
+    private val _appConfig = MutableStateFlow<AppConfig?>(null)
+    val appConfig: StateFlow<AppConfig?> = _appConfig
+
     init {
+        _screenStateFlow.value = ScreenState.Content()
         start()
     }
 
     private fun start() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.Default) {
             runCatching {
-                runStartupSequence()
-            }.onSuccess {
-                _screenStateFlow.value = ScreenState.Content
+                getStartupUseCase()
+            }.onSuccess { config ->
+                _appConfig.value = config
+                _screenStateFlow.value = ScreenState.Content(isReady = true)
             }.onFailure { throwable ->
                 _screenStateFlow.value = ScreenState.Error(
                     exception = throwable as? Exception ?: Exception(throwable),
                 )
             }
         }
-    }
-
-    private suspend fun runStartupSequence() {
-        getConfigUseCase()
     }
 }
