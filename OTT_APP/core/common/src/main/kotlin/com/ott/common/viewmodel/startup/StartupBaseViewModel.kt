@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.ott.common.ui.screen.ScreenState
 import com.ott.common.viewmodel.GlobalPageViewModel
 import com.ott.session.configs.AppConfig
+import com.ott.session.manager.SessionManager
 import com.ott.session.usecase.GetStartupUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -18,6 +19,7 @@ import javax.inject.Inject
 open class StartupBaseViewModel @Inject constructor(
     @param:ApplicationContext private val context: Context,
     private val getStartupUseCase: GetStartupUseCase,
+    private val sessionManager: SessionManager,
 ) : GlobalPageViewModel(context = context) {
 
     private val _appConfig = MutableStateFlow<AppConfig?>(null)
@@ -33,7 +35,7 @@ open class StartupBaseViewModel @Inject constructor(
             runCatching {
                 getStartupUseCase()
             }.onSuccess { config ->
-                _appConfig.value = config
+                _appConfig.value = sessionManager.appConfig
                 _screenStateFlow.value = ScreenState.Content(isReady = true)
             }.onFailure { throwable ->
                 _screenStateFlow.value = ScreenState.Error(
