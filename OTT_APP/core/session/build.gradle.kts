@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.ott.android.library)
     alias(libs.plugins.ott.android.hilt)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android{
@@ -9,5 +10,5 @@ android{
 }
 dependencies {
     implementation(libs.androidx.dataStore.preferences)
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation(libs.kotlinx.serialization.json)
 }

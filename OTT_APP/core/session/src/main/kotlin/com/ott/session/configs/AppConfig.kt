@@ -1,6 +1,6 @@
 package com.ott.session.configs
 
-interface AppConfig{
+interface AppConfig {
     val forceUpdate: Boolean
     val version: String
     val country: String

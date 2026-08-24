@@ -11,7 +11,8 @@ android {
 dependencies{
     implementation(libs.kotlinx.immutable)
     implementation(libs.androidx.core)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.navigation3.runtime)
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation(libs.kotlinx.serialization.json)
     implementation(project(":core:session"))
 }

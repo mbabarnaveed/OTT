@@ -23,7 +23,7 @@ object FeatureStartUpModule {
             StepInMobileScreen(
                 stateFlow = viewModel.screenStateFlow,
                 content = {
-                    SplashScreen()
+                    SplashScreen(viewModel= viewModel)
                 }
             )
         }

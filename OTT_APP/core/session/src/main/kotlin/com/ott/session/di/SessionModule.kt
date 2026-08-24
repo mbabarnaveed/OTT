@@ -1,25 +1,31 @@
 package com.ott.session.di
 
-import android.content.Context
-import com.ott.session.configs.AppConfig
-import com.ott.session.manager.SessionManager
+import com.ott.session.repository.ConfigRepository
+import com.ott.session.repository.ConfigRepositoryImpl
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.serialization.json.Json
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object SessionModule {
+abstract class SessionModule {
 
-    @Provides
+    @Binds
     @Singleton
-    fun provideSessionManager(
-        @ApplicationContext context: Context,
-        appConfig: AppConfig
-    ): SessionManager {
-        return SessionManager(context, appConfig)
+    abstract fun bindConfigRepository(
+        impl: ConfigRepositoryImpl,
+    ): ConfigRepository
+
+    companion object {
+        @Provides
+        @Singleton
+        fun provideJson(): Json = Json {
+            ignoreUnknownKeys = true
+            isLenient = true
+        }
     }
 }
