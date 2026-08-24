@@ -19,6 +19,8 @@ fun StepInMobileScreen(
     errorContent: @Composable () -> Unit = { ScreenErrorContent() },
     content: @Composable () -> Unit = { ScreenContent() },
 ) {
+
+
     val state by stateFlow.collectAsState(ScreenState.Loading)
     Box(modifier = Modifier.fillMaxSize().background(color = Color.White)){
         when(state){
