@@ -12,5 +12,6 @@ fun ScreenLoadingContent() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
+
     }
 }

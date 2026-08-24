@@ -26,7 +26,7 @@ open class StartupBaseViewModel @Inject constructor(
     val appConfig: StateFlow<AppConfig?> = _appConfig
 
     init {
-        _screenStateFlow.value = ScreenState.Content()
+        _screenStateFlow.value = ScreenState.Loading
         start()
     }
 
