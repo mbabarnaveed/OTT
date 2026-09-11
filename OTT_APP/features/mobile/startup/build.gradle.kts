@@ -8,6 +8,7 @@ android {
 
 dependencies {
     implementation(project(":core:common"))
+    implementation(project(":core:design_system"))
     implementation(project(":core:session"))
     implementation(project(":core:mobile"))
 }

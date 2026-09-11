@@ -16,6 +16,7 @@ import com.ott.common.routes.AppRoute
 import com.ott.common.routes.EntryBuilder
 import com.ott.common.routes.NavigationManager
 import com.ott.common.routes.StartUpRoute
+import com.ott.design_system.AppTheme
 
 @Composable
 fun AppRoot(
@@ -29,14 +30,16 @@ fun AppRoot(
         navigationManager.attachBackStack(backStack)
     }
 
-    NavDisplay(
-        backStack = backStack,
-        modifier = Modifier.fillMaxSize(),
-        onBack = { navigationManager.navigateBack() },
-        entryProvider = entryProvider {
-            entryBuilders.forEach { it(navigationManager) }
-        }
-    )
+    AppTheme {
+        NavDisplay(
+            backStack = backStack,
+            modifier = Modifier.fillMaxSize(),
+            onBack = { navigationManager.navigateBack() },
+            entryProvider = entryProvider {
+                entryBuilders.forEach { it(navigationManager) }
+            }
+        )
+    }
 }
 
 @Composable

@@ -98,6 +98,7 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(project(":core:mobile"))
     implementation(project(":core:common"))
+    implementation(project(":core:design_system"))
     implementation(project(":features:mobile:startup"))
 
     debugImplementation(libs.androidx.compose.ui.tooling)
