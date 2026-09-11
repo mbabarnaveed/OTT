@@ -1,4 +1,4 @@
-package com.ott.mobile.ui.elements
+package com.ott.common.ui.elements
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,8 +21,8 @@ fun AppText(
     color: Color = Color.Unspecified,
     fontWeight: FontWeight = FontWeight.Bold,
     textAlign: TextAlign = TextAlign.Unspecified,
-    maxLines: Int = Int.MAX_VALUE, ) {
-
+    maxLines: Int = Int.MAX_VALUE,
+) {
     val palette = AppTheme.colorScheme
     val resolvedColor = if (color == Color.Unspecified) palette.light else color
     val style = when (variant) {
@@ -31,11 +31,10 @@ fun AppText(
 
     Text(
         maxLines = maxLines,
-        color= resolvedColor,
+        color = resolvedColor,
         text = text,
         modifier = modifier,
         style = style,
         textAlign = textAlign,
     )
-
 }

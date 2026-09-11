@@ -4,17 +4,16 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.ott.common.ui.elements.AppText
+import com.ott.common.ui.elements.AppTextVariant
 import com.ott.common.ui.screen.ScreenState
 import com.ott.common.viewmodel.startup.StartupBaseViewModel
 import com.ott.mobile.device.LocalDeviceFormFactor
-import com.ott.mobile.ui.elements.AppText
-import com.ott.mobile.ui.elements.AppTextVariant
 
 
 @Composable

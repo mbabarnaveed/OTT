@@ -15,4 +15,5 @@ dependencies{
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.kotlinx.serialization.json)
     implementation(project(":core:session"))
+    implementation(project(":core:design_system"))
 }

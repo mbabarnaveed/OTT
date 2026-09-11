@@ -23,7 +23,7 @@ object FeatureStartUpModule {
             StepInTVScreen(
                 stateFlow = viewModel.screenStateFlow,
                 content = {
-                    SplashScreen()
+                    SplashScreen(viewModel=viewModel)
                 }
             )
         }
