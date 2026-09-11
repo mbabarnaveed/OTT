@@ -13,6 +13,8 @@ import androidx.compose.ui.unit.dp
 import com.ott.common.ui.screen.ScreenState
 import com.ott.common.viewmodel.startup.StartupBaseViewModel
 import com.ott.mobile.device.LocalDeviceFormFactor
+import com.ott.mobile.ui.elements.AppText
+import com.ott.mobile.ui.elements.AppTextVariant
 
 
 @Composable
@@ -31,21 +33,22 @@ fun SplashScreen(
     ) {
         if (isReady && config != null) {
             Column {
-                Text("forceUpdate: ${config?.forceUpdate}")
-                Text("version: ${config?.version}")
-                Text("country: ${config?.country}")
-                Text("baseLang: ${config?.baseLang}")
-                Text("tenantId: ${config?.tenantId}")
-                Text("translation_url: ${config?.translation_url}")
-                Text("languages: ${config?.languages}")
-                Text("isPortrait: ${device.isPortrait}")
-                Text("isLandscape: ${device.isLandscape}")
-                Text("isMobile: ${device.isMobile}")
-                Text("isTablet: ${device.isTablet}")
-                Text("isFoldable: ${device.isFoldable}")
+                AppText(text = "forceUpdate: ${config?.forceUpdate}", variant = AppTextVariant.Header)
+                AppText(text ="forceUpdate: ${config?.forceUpdate}", variant =AppTextVariant.Header)
+                AppText(text ="version: ${config?.version}", variant =AppTextVariant.Header)
+                AppText(text ="country: ${config?.country}", variant =AppTextVariant.Header)
+                AppText(text ="baseLang: ${config?.baseLang}", variant =AppTextVariant.Header)
+                AppText(text ="tenantId: ${config?.tenantId}", variant =AppTextVariant.Header)
+                AppText(text ="translation_url: ${config?.translation_url}", variant =AppTextVariant.Header)
+                AppText(text ="languages: ${config?.languages}", variant =AppTextVariant.Header)
+                AppText(text ="isPortrait: ${device.isPortrait}", variant =AppTextVariant.Header)
+                AppText(text ="isLandscape: ${device.isLandscape}", variant =AppTextVariant.Header)
+                AppText(text ="isMobile: ${device.isMobile}", variant =AppTextVariant.Header)
+                AppText(text ="isTablet: ${device.isTablet}", variant =AppTextVariant.Header)
+                AppText(text ="isFoldable: ${device.isFoldable}", variant =AppTextVariant.Header)
                 if (device.isFoldOpen) {
-                    Text("isFoldOpen: ${device.isFoldOpen}")
-                    Text("foldableState: open")
+                    AppText(text ="isFoldOpen: ${device.isFoldOpen}", variant =AppTextVariant.Header)
+                    AppText(text ="foldableState: open", variant =AppTextVariant.Header)
                 }
             }
         }
