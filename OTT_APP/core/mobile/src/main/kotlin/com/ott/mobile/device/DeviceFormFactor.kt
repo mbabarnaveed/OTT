@@ -10,6 +10,7 @@ data class DeviceFormFactor(
     val isMobile: Boolean,
     val isTablet: Boolean,
     val isFoldable: Boolean,
+    val isFoldOpen: Boolean,
 )
 
 fun resolveDeviceFormFactor(
@@ -27,6 +28,7 @@ fun resolveDeviceFormFactor(
     val packageManager = context.packageManager
     val isFoldable = packageManager.hasSystemFeature(PackageManager.FEATURE_SENSOR_HINGE_ANGLE) ||
         packageManager.hasSystemFeature(FEATURE_FOLDABLE)
+    val isFoldOpen = isFoldable && isTablet
 
     return DeviceFormFactor(
         isPortrait = !isLandscape,
@@ -34,6 +36,7 @@ fun resolveDeviceFormFactor(
         isMobile = !isTablet,
         isTablet = isTablet,
         isFoldable = isFoldable,
+        isFoldOpen = isFoldOpen,
     )
 }
 

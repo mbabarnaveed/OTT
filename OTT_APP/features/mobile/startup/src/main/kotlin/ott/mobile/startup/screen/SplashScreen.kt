@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.ott.common.ui.screen.ScreenState
 import com.ott.common.viewmodel.startup.StartupBaseViewModel
+import com.ott.mobile.device.LocalDeviceFormFactor
 
 
 @Composable
@@ -20,6 +21,7 @@ fun SplashScreen(
 ) {
     val state by viewModel.screenStateFlow.collectAsState(ScreenState.Content())
     val config by viewModel.appConfig.collectAsState()
+    val device = LocalDeviceFormFactor.current
     val isReady = (state as? ScreenState.Content)?.isReady == true
 
     Box(
@@ -36,6 +38,15 @@ fun SplashScreen(
                 Text("tenantId: ${config?.tenantId}")
                 Text("translation_url: ${config?.translation_url}")
                 Text("languages: ${config?.languages}")
+                Text("isPortrait: ${device.isPortrait}")
+                Text("isLandscape: ${device.isLandscape}")
+                Text("isMobile: ${device.isMobile}")
+                Text("isTablet: ${device.isTablet}")
+                Text("isFoldable: ${device.isFoldable}")
+                if (device.isFoldOpen) {
+                    Text("isFoldOpen: ${device.isFoldOpen}")
+                    Text("foldableState: open")
+                }
             }
         }
     }
