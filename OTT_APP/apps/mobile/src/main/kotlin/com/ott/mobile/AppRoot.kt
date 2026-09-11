@@ -1,7 +1,11 @@
 package com.ott.mobile
 
 import android.content.Intent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
@@ -28,13 +32,22 @@ fun AppRoot(
     }
 
     AppTheme {
-        NavDisplay(
-            backStack = backStack,
-            modifier = Modifier.fillMaxSize(),
-            onBack = { navigationManager.navigateBack() },
-            entryProvider = entryProvider {
-                entryBuilders.forEach { it(navigationManager) }
-            }
-        )
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(AppTheme.colorScheme.body)
+        ) {
+            NavDisplay(
+                backStack = backStack,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .statusBarsPadding()
+                    .safeDrawingPadding(),
+                onBack = { navigationManager.navigateBack() },
+                entryProvider = entryProvider {
+                    entryBuilders.forEach { it(navigationManager) }
+                }
+            )
+        }
     }
 }

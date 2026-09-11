@@ -1,7 +1,9 @@
 package com.ott.mobile
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.ott.common.routes.EntryBuilder
@@ -22,10 +24,8 @@ class MainActivity  : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         enableEdgeToEdge(
-            /*statusBarStyle = SystemBarStyle.light(
-                scrim = menuBg.toArgb(),
-                darkScrim = menuBg.toArgb()
-            )*/
+            statusBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
+            navigationBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
         )
         setContent {
             AppRoot(
